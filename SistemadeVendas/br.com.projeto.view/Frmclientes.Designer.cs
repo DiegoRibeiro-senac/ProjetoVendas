@@ -145,6 +145,7 @@
             this.btneditar.TabIndex = 33;
             this.btneditar.Text = "Editar";
             this.btneditar.UseVisualStyleBackColor = false;
+            this.btneditar.Click += new System.EventHandler(this.btneditar_Click);
             // 
             // tabClientes
             // 
@@ -490,6 +491,7 @@
             this.tabelaCliente.ReadOnly = true;
             this.tabelaCliente.Size = new System.Drawing.Size(488, 150);
             this.tabelaCliente.TabIndex = 36;
+            this.tabelaCliente.DoubleClick += new System.EventHandler(this.tabelaCliente_DoubleClick);
             // 
             // btnpesquisar
             // 
@@ -533,6 +535,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Frmclientes";
             this.Text = " ";
+            this.Load += new System.EventHandler(this.Frmclientes_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabClientes.ResumeLayout(false);

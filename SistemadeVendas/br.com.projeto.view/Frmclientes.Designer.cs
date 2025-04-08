@@ -67,7 +67,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabelaCliente = new System.Windows.Forms.DataGridView();
             this.btnpesquisar = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtpesquisa = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabClientes.SuspendLayout();
@@ -133,6 +133,7 @@
             this.btnexcluir.TabIndex = 32;
             this.btnexcluir.Text = "Excluir";
             this.btnexcluir.UseVisualStyleBackColor = false;
+            this.btnexcluir.Click += new System.EventHandler(this.btnexcluir_Click);
             // 
             // btneditar
             // 
@@ -471,7 +472,7 @@
             // 
             this.tabPage2.Controls.Add(this.tabelaCliente);
             this.tabPage2.Controls.Add(this.btnpesquisar);
-            this.tabPage2.Controls.Add(this.textBox1);
+            this.tabPage2.Controls.Add(this.txtpesquisa);
             this.tabPage2.Controls.Add(this.label16);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -491,6 +492,7 @@
             this.tabelaCliente.ReadOnly = true;
             this.tabelaCliente.Size = new System.Drawing.Size(488, 150);
             this.tabelaCliente.TabIndex = 36;
+            this.tabelaCliente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabelaCliente_CellClick);
             this.tabelaCliente.DoubleClick += new System.EventHandler(this.tabelaCliente_DoubleClick);
             // 
             // btnpesquisar
@@ -504,13 +506,14 @@
             this.btnpesquisar.TabIndex = 35;
             this.btnpesquisar.Text = "Pesquisar";
             this.btnpesquisar.UseVisualStyleBackColor = false;
+            this.btnpesquisar.Click += new System.EventHandler(this.btnpesquisar_Click);
             // 
-            // textBox1
+            // txtpesquisa
             // 
-            this.textBox1.Location = new System.Drawing.Point(73, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(195, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtpesquisa.Location = new System.Drawing.Point(73, 19);
+            this.txtpesquisa.Name = "txtpesquisa";
+            this.txtpesquisa.Size = new System.Drawing.Size(195, 20);
+            this.txtpesquisa.TabIndex = 1;
             // 
             // label16
             // 
@@ -589,7 +592,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView tabelaCliente;
         private System.Windows.Forms.Button btnpesquisar;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtpesquisa;
         private System.Windows.Forms.Label label16;
     }
 }

@@ -36,6 +36,7 @@ namespace SistemadeVendas.br.com.projeto.view
 
             ClienteDAO dao = new ClienteDAO();
             dao.cadastrarCliente(obj);
+            tabelaCliente.DataSource = dao.listarClientes();
         }
 
         private void Frmclientes_Load(object sender, EventArgs e)
@@ -71,7 +72,6 @@ namespace SistemadeVendas.br.com.projeto.view
 
             //recarregar o datagridview
             tabelaCliente.DataSource = dao.listarClientes();
-
         }
 
         private void tabelaCliente_DoubleClick(object sender, EventArgs e)
@@ -94,7 +94,42 @@ namespace SistemadeVendas.br.com.projeto.view
 
             //Alterar para a guia Dados Pessoais
             tabClientes.SelectedTab = tabPage1;
+        }
 
+        private void btnexcluir_Click(object sender, EventArgs e)
+        {
+            if (txtcodigo.Text == null)
+            {
+                return;
+            }
+
+            Cliente obj = new Cliente();
+
+            obj.codigo = int.Parse(txtcodigo.Text);
+
+            ClienteDAO dao = new ClienteDAO();
+            dao.excluirClientes(obj);
+            //recarregar o datagridview
+            tabelaCliente.DataSource = dao.listarClientes();
+        }
+
+        private void tabelaCliente_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtcodigo.Text = tabelaCliente.CurrentRow.Cells[0].Value.ToString();
+        }
+
+        private void btnpesquisar_Click(object sender, EventArgs e)
+        {
+            string nome = txtpesquisa.Text;
+
+            ClienteDAO dao = new ClienteDAO();
+
+            tabelaCliente.DataSource = dao.BuscarClientePorNome(nome);
+
+            if (tabelaCliente.Rows.Count == 0)
+            {
+                tabelaCliente.DataSource = dao.listarClientes();
+            }
         }
     }
 }

@@ -78,7 +78,6 @@ namespace SistemadeVendas.br.com.projeto.dao
                 //2 passo - Organizar o comando sql e executar
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 conexao.Open();
-                executacmd.ExecuteNonQuery();
 
                 //3 passo - Criar o MySQLDataApter para preencher os dados no DataTable;
                 MySqlDataAdapter da = new MySqlDataAdapter(executacmd);
@@ -190,7 +189,6 @@ namespace SistemadeVendas.br.com.projeto.dao
 
                 //3 passo - Abrir a conexao e executar o comando sql
                 conexao.Open();
-                executacmd.ExecuteNonQuery();
 
                 MySqlDataAdapter da = new MySqlDataAdapter(executacmd);
                 da.Fill(tabelacliente);
